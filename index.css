@@ -411,6 +411,21 @@ body {
 
 /* Media Query */
 
+@media (max-width: 1000px) {
+  /* Form */
+  .main-section {
+    width: 60%;
+    height: 65%;
+  }
+}
+
+@media (max-width: 800px) {
+  /* Form */
+  .main-section {
+    width: 70%;
+    height: 60%;
+  }
+}
 @media (max-width: 600px) {
   /* Header */
   .header {
@@ -429,5 +444,26 @@ body {
 
   .header-image {
     height: 35%;
+  }
+
+  /* Form */
+  .main-section {
+    width: 80%;
+    height: 50%;
+  }
+
+  .main-add-input {
+    font-size: 1.6rem;
+  }
+  .main-add-button {
+    padding: 0.8rem 1.1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  /* Form */
+  .main-section {
+    width: 90%;
+    height: 50%;
   }
 }
