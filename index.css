@@ -1,8 +1,10 @@
+/* Variables */
 :root {
   --color-white: white;
   --color-off-white: #f1f3f5;
-  --color-grey: #e2e5e9;
-  --color-dark-grey: #838b92;
+  --color-light-grey: #eff0f2;
+  --color-grey: #c3c3c4;
+  --color-dark-grey: #5c616d;
   --color-black: black;
   --color-dark-brown: #4d3a3a;
   --color-blue: #59abff;
@@ -12,6 +14,7 @@
   --fonts-roboto: Roboto;
 }
 
+/* Global Styles */
 *,
 *::after,
 *::before {
@@ -38,6 +41,7 @@ body {
   -webkit-user-select: var(--color-dark-brown);
   background-image: linear-gradient(120deg, #dcf3ff 0%, #59abff 100%);
 }
+
 /* Header */
 .header {
   grid-area: header;
@@ -100,12 +104,13 @@ body {
 }
 
 .main-add-input {
-  padding-left: 1.5rem;
+  padding-left: 2rem;
   font-size: 1.8rem;
   width: 80%;
   height: 70%;
   border: none;
   border-radius: 3rem;
+  color: var(--color-dark-brown);
   background: var(--color-white);
   box-shadow: 0.2rem 0.2rem 1rem rgba(102, 102, 102, 0.1);
   border: 0.2rem solid var(--color-off-white);
@@ -114,7 +119,6 @@ body {
 .main-add-input::placeholder {
   color: var(--color-grey);
   font-style: italic;
-  text-align: center;
 }
 
 .main-add-input::selection {
@@ -158,8 +162,7 @@ body {
   outline: none;
 }
 
-/* Main List */
-
+/* List */
 .main-list {
   grid-area: list;
   width: 100%;
@@ -172,26 +175,161 @@ body {
   row-gap: 1rem;
 }
 
+/* Edit Form */
+.main-list-edit-form {
+  display: grid;
+  grid-template-areas:
+    "label"
+    "input";
+  background-color: var(--color-white);
+  box-shadow: 0.2rem 0.2rem 1rem rgba(102, 102, 102, 0.1);
+  border-radius: 3rem;
+  width: 40%;
+  align-items: center;
+  justify-items: center;
+  align-content: space-evenly;
+  border: 0.2rem solid var(--color-off-white);
+  padding: 0.2rem 0;
+}
+
+.main-list-edit-label {
+  grid-area: label;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--color-dark-grey);
+  letter-spacing: 0.08rem;
+}
+
+/* Input Section */
+.main-list-edit-input-section {
+  grid-area: input;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 80%;
+  height: 100%;
+}
+
+.main-edit-input {
+  color: var(--color-dark-brown);
+  background-color: transparent;
+  transition: all.3s ease;
+  height: 100%;
+  width: 75%;
+  border: none;
+  border-bottom: dotted 0.35rem var(--color-light-grey);
+  transition: all 0.3s ease;
+  font-size: 1.8rem;
+}
+
+.main-edit-input::selection {
+  background-color: #4d3535;
+  color: var(--color-white);
+}
+
+.main-edit-input:focus {
+  outline: 0;
+  color: var(--color-dark-brown);
+  outline: none;
+  border-bottom: var(--color-grey) 0.2rem solid;
+  transition: all 0.3s ease;
+}
+
+/* Edit Button */
+
+.pen-icon {
+  font-size: 2.1rem;
+  color: var(--color-dark-grey);
+  transition: all 0.3s ease;
+}
+
+.main-edit-button {
+  cursor: pointer;
+  border-radius: 0.5rem;
+  border: #e9e9eb 0.1rem solid;
+  background-color: var(--color-off-white);
+  transition: all 0.3s ease;
+  width: 10%;
+  height: 110%;
+}
+
+.main-edit-button:hover {
+  transform: translateY(-0.3rem);
+  background: transparent;
+  border: none;
+}
+
+.main-edit-button:hover .pen-icon {
+  color: #4d3535;
+}
+
+.main-edit-button:active .pen-icon,
+.main-edit-button:focus {
+  outline: none;
+  transform: translateY(0);
+  color: #4d3535;
+}
+
+/* Cancel Button */
+.cancel-icon {
+  font-size: 2.1rem;
+  color: var(--color-dark-grey);
+  transition: all 0.3s ease;
+}
+
+.main-cancel-button {
+  cursor: pointer;
+  border-radius: 0.5rem;
+  border: #e9e9eb 0.1rem solid;
+  background-color: var(--color-off-white);
+  transition: all 0.3s ease;
+  width: 10%;
+  height: 120%;
+}
+
+.main-cancel-button:hover {
+  transform: translateY(-0.3rem);
+  background: transparent;
+  border: none;
+}
+
+.main-cancel-button:hover .cancel-icon {
+  color: #4d3535;
+}
+.main-cancel-button:active .cancel-icon,
+.main-cancel-button:focus {
+  outline: none;
+  transform: translateY(0);
+  color: #4d3535;
+}
+
+/* Items */
 .main-list-item {
   display: grid;
-  grid-template-areas: "heading button";
-  grid-template-columns: 50% 50%;
+  grid-template-areas: "section button";
+  grid-template-columns: 80% 20%;
   align-items: center;
   justify-items: center;
   justify-content: space-evenly;
   width: 40%;
 }
 
-.main-list-item__heading {
-  grid-area: heading;
-  color: var(--color-dark-brown);
-  width: 30rem;
-  font-size: 1.6rem;
-  padding: 1rem;
-  border-radius: 3rem;
-  border: 0.2rem solid var(--color-off-white);
+.main-list-section {
+  grid-area: section;
+  height: 100%;
+  width: 100%;
   background-color: var(--color-white);
   box-shadow: 0.2rem 0.2rem 1rem rgba(102, 102, 102, 0.1);
+  border-radius: 3rem;
+  border: 0.2rem solid var(--color-off-white);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.main-list-item__heading {
+  color: var(--color-dark-brown);
+  font-size: 1.6rem;
 }
 
 .main-list-item__heading::selection {
@@ -227,6 +365,7 @@ body {
   transform: translateY(0);
   box-shadow: 0.2rem 0.2rem 1rem rgba(92, 92, 92, 0.131);
 }
+
 /* Footer */
 .footer {
   grid-area: footer;
