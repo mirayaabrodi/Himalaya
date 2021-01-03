@@ -408,3 +408,26 @@ body {
 .footer-link:hover::after {
   height: 1.65rem;
 }
+
+/* Media Query */
+
+@media (max-width: 600px) {
+  /* Header */
+  .header {
+    grid-area: header;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 70%;
+    height: 18rem;
+    -webkit-user-select: none;
+  }
+
+  .header-heading {
+    font-size: 4.5rem;
+  }
+
+  .header-image {
+    height: 35%;
+  }
+}
