@@ -189,7 +189,6 @@ body {
   justify-items: center;
   align-content: space-evenly;
   border: 0.2rem solid var(--color-off-white);
-  padding: 0.2rem 0;
 }
 
 .main-list-edit-label {
@@ -207,7 +206,7 @@ body {
   align-items: center;
   justify-content: space-evenly;
   width: 80%;
-  height: 100%;
+  height: 90%;
 }
 
 .main-edit-input {
@@ -231,14 +230,14 @@ body {
   outline: 0;
   color: var(--color-dark-brown);
   outline: none;
-  border-bottom: var(--color-grey) 0.2rem solid;
+  border-bottom: var(--color-grey) 0.35rem solid;
   transition: all 0.3s ease;
 }
 
 /* Edit Button */
 
 .pen-icon {
-  font-size: 2.1rem;
+  font-size: 1.8rem;
   color: var(--color-dark-grey);
   transition: all 0.3s ease;
 }
@@ -250,7 +249,7 @@ body {
   background-color: var(--color-off-white);
   transition: all 0.3s ease;
   width: 10%;
-  height: 110%;
+  height: 100%;
 }
 
 .main-edit-button:hover {
@@ -272,7 +271,7 @@ body {
 
 /* Cancel Button */
 .cancel-icon {
-  font-size: 2.1rem;
+  font-size: 1.8rem;
   color: var(--color-dark-grey);
   transition: all 0.3s ease;
 }
@@ -411,21 +410,55 @@ body {
 
 /* Media Query */
 
+/* Max Width 1000px */
 @media (max-width: 1000px) {
   /* Form */
   .main-section {
     width: 60%;
     height: 65%;
   }
+
+  /* Edit Form */
+  .main-list-edit-form {
+    width: 50%;
+  }
+
+  /* Items */
+  .main-list-item {
+    width: 50%;
+  }
 }
 
+/* Max Width 800px */
 @media (max-width: 800px) {
   /* Form */
   .main-section {
     width: 70%;
     height: 60%;
   }
+
+  .main-list-section {
+    height: 95%;
+    width: 100%;
+  }
+
+  /* Edit Form */
+  .main-list-edit-form {
+    width: 60%;
+  }
+
+  .main-delete-button {
+    padding: 0.8rem 1rem;
+    font-size: 1.7rem;
+  }
+
+  /* Items */
+  .main-list-item {
+    width: 60%;
+  }
 }
+
+/* Max Width 600px */
 @media (max-width: 600px) {
   /* Header */
   .header {
@@ -458,12 +491,34 @@ body {
   .main-add-button {
     padding: 0.8rem 1.1rem;
   }
+
+  /* Edit Form */
+  .main-list-edit-form {
+    width: 70%;
+  }
+
+  /* Items */
+  .main-list-item {
+    width: 70%;
+  }
 }
+
+/* Max Width 400px */
 
 @media (max-width: 400px) {
   /* Form */
   .main-section {
     width: 90%;
     height: 50%;
+  }
+
+  /* Edit Form */
+  .main-list-edit-form {
+    width: 80%;
+  }
+
+  /* Items */
+  .main-list-item {
+    width: 80%;
   }
 }
